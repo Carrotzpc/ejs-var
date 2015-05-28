@@ -1,23 +1,22 @@
-# EJS
+# EJS-VAR
 
 Embedded JavaScript templates.
-
-[![Build Status](https://travis-ci.org/visionmedia/ejs.png)](https://travis-ci.org/visionmedia/ejs)
+Add dynamic include (from variable).
 
 - - -
 NOTE: Version 2 of EJS makes some breaking changes with this version (notably,
 removal of the filters feature).  Work on v2 is happening here:
-https://github.com/mde/ejs
+https://github.com/Carrotzpc/ejs-var
 
-File issues for EJS v2 here: https://github.com/mde/ejs/issues
+File issues for EJS v2 here: https://github.com/Carrotzpc/ejs-var/issues
 - - -
 
 ## Installation
 
-    $ npm install ejs
+    $ npm install ejs-var
 
 ## Features
-
+  * Add dynamic include (from variable).
   * Complies with the [Express](http://expressjs.com) view system
   * Static caching of intermediate JavaScript
   * Unbuffered code for conditionals etc `<% code %>`
@@ -30,11 +29,11 @@ File issues for EJS v2 here: https://github.com/mde/ejs/issues
   * Newline slurping with `<% code -%>` or `<% -%>` or `<%= code -%>` or `<%- code -%>`
 
 ## Example
-
+    <% include var_name %>
     <% if (user) { %>
 	    <h2><%= user.name %></h2>
     <% } %>
-    
+
 ## Try out a live example now
 
 <a href="https://runnable.com/ejs" target="_blank"><img src="https://runnable.com/external/styles/assets/runnablebtn.png" style="width:67px;height:25px;"></a>
@@ -146,7 +145,7 @@ Currently these filters are available:
 ## Adding filters
 
  To add a filter simply add a method to the `.filters` object:
- 
+
 ```js
 ejs.filters.last = function(obj) {
   return obj[obj.length - 1];
@@ -170,7 +169,7 @@ ejs.filters.last = function(obj) {
 
   include `./ejs.js` or `./ejs.min.js` and `require("ejs").compile(str)`.
 
-## License 
+## License
 
 (The MIT License)
 
